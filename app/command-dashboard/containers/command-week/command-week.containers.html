@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="command-week.containers.scss">
+
+<div class="left">
+  <span class="semaine"> Week : <input type="number" name="week"  min="1" max="52" value="1"> -> from ... to ...</span>
+
+  <form>
+
+    <span>
+      Cereal :
+      <select name="cereal">
+        <option
+          *ngFor="let bread of breads"
+          [value]="bread.cereal">
+          {{bread.cereal}}
+        </option>
+      </select>
+    </span><br>
+
+    <span>
+      Type :
+      <select name="type">
+        <option
+          *ngFor="let bread of breads"
+          [value]="bread.type">
+          {{bread.type}}
+        </option>
+      </select>
+    </span><br>
+
+    <span>
+      Weight :
+      <select name="weight">
+        <option
+          *ngFor="let bread of breads"
+          [value]="bread.poid">
+          {{bread.poid}}
+        </option>
+      </select>
+    </span><br>
+
+    <span>
+      Number :
+      <label><input type="number" name="numberBread" min="1"></label>
+    </span><br>
+    <span>
+      Price : .... &euro;
+    </span><br>
+  </form>
+</div>
+
+<div class="right">
+  bonjour2
+</div>
