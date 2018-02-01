@@ -1,0 +1,20 @@
+span.add{
+  float : right;
+  padding-top: 10px;
+}
+button.add{
+  border-radius: 45%;
+  width: 30px;
+  height: 30px;
+  background-color: #ffff00;
+  border: 1px solid black;
+}
+button.add span.text{
+  color: black;
+  font-size: 40px;
+  font-weight: bold;
+
+}
+button.add:hover{
+  background-color: #e6e600;
+}

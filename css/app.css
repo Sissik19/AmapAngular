@@ -47,12 +47,16 @@ input[type=number] {
 }
 button {
   cursor: pointer;
-  background: #9f72e6;
+  background: rgba(226, 157, 35, 0.99);
   border: 0;
   border-radius: 2px;
   padding: 5px 10px;
   text-align: center;
   color: #fff;
+}
+button:hover{
+  background: rgba(185, 124, 0, 0.99);
+  box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24), 0 4px 5px 0 rgba(0,0,0,0.19);
 }
 button:disabled {
   cursor: not-allowed;

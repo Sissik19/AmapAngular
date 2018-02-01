@@ -1,5 +1,7 @@
-import {Component, Input} from "@angular/core";
+import {Component, Input, Output, EventEmitter} from "@angular/core";
+
 import {Customer} from "../../models/customer.interface";
+
 
 @Component({
   selector : 'customer-details',
@@ -10,8 +12,22 @@ import {Customer} from "../../models/customer.interface";
 export class CustomerDetailsComponent{
 
   @Input()
-  oneCustomer : Customer;
+  customers : Customer[];
+
+  @Output()
+  remove : EventEmitter<Customer> = new EventEmitter<Customer>();
+
+  @Output()
+  view: EventEmitter<Customer> = new EventEmitter<Customer>();
 
   constructor(){}
+
+  onView(customer : Customer){
+    this.view.emit(customer);
+  }
+
+  onRemove(customer : Customer){
+    this.remove.emit(customer);
+  }
 
 }

@@ -1,6 +1,22 @@
 
-  <td>{{oneCustomer.name}}</td>
-  <td>{{oneCustomer.firstName}}</td>
-  <td>{{oneCustomer.mail}}</td>
-  <td>{{oneCustomer.tel}}</td>
-  <td>{{oneCustomer.bankAccount}}</td>
+<table class="details-customers-table">
+  <tbody>
+    <tr>
+      <th>Name</th>
+      <th>First Name</th>
+      <th>Mail adress</th>
+      <th>Tel</th>
+      <th>Bank account</th>
+    </tr>
+    <tr *ngFor="let oneCustomer of customers">
+      <td>{{oneCustomer.name}}</td>
+      <td>{{oneCustomer.firstName}}</td>
+      <td>{{oneCustomer.mail}}</td>
+      <td>{{oneCustomer.tel}}</td>
+      <td  [ngClass]="{'negative-account': oneCustomer.bankAccount<0, 'positive-account': oneCustomer.bankAccount>=0}"> {{oneCustomer.bankAccount}} </td>
+      <td><button (click)="onView(oneCustomer)">View</button></td>
+      <td><button (click)="onRemove(oneCustomer)">Remove</button></td>
+    </tr>
+  </tbody>
+</table>
+

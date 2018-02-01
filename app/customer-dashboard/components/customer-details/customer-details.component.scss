@@ -1,0 +1,26 @@
+table{
+  border: medium solid #000000;
+  border-collapse: collapse;
+}
+td, th{
+  //border: thin solid #000000;
+  text-align: center;
+  padding: 10px;
+}
+
+th{
+  font-weight: bold;
+}
+
+td{
+  border-top: thin solid #000000;
+}
+
+td.negative-account{
+  color: red;
+  font-weight: bold;
+}
+td.positive-account{
+  color : green;
+  font-weight: bold;
+}
