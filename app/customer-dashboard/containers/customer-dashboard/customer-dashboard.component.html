@@ -4,7 +4,9 @@
     (view)="handleView($event)"
     (remove)="handleRemove($event)">
   </customer-details>
-  <span class="add"><button class="add"(add)="handleAdd($event)"><span class="text">+</span></button></span>
+  <span class="add">
+    <button class="add" (click)="addCustomer()">+</button>
+  </span>
 </div>
 
 

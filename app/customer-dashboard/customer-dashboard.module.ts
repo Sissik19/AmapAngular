@@ -6,6 +6,18 @@ import {CustomerDashboardComponent} from "./containers/customer-dashboard/custom
 import {HttpModule} from "@angular/http";
 import {CommonModule} from "@angular/common";
 import {CustomerDetailsComponent} from "./components/customer-details/customer-details.component";
+import {Routes} from "@angular/router";
+import {CustomerViewerComponent} from "./containers/customer-viewer/customer-viewer.component";
+
+const routes : Routes = [
+  {
+    path: 'customers',
+    children: [
+      {path: '', component: CustomerDashboardComponent},
+      {path: ':id', component: CustomerViewerComponent}
+    ]
+  }
+];
 
 @NgModule({
   declarations:[
