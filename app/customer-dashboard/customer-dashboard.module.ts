@@ -22,7 +22,8 @@ const routes : Routes = [
 @NgModule({
   declarations:[
     CustomerDashboardComponent,
-    CustomerDetailsComponent
+    CustomerDetailsComponent,
+    CustomerViewerComponent
   ],
   imports: [
     CommonModule,
