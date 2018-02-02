@@ -1,11 +1,11 @@
-<div>
+<div class="allCustomer table-responsive">
   <customer-details
     [customers]="customers"
     (view)="handleView($event)"
     (remove)="handleRemove($event)">
   </customer-details>
   <div class="add">
-    <button class="add" (click)="addCustomer()">+</button>
+    <button (click)="addCustomer()">Add</button>
   </div>
 </div>
 

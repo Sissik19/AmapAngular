@@ -1,17 +1,15 @@
+div.allCustomer{
+  max-width: 700px;
+}
+
 div.add{
   float : right;
   margin-top: 10px;
 }
-button.add{
-  border-radius: 45%;
-  width: 30px;
-  height: 30px;
-  background-color: #ffff00;
-  border: 1px solid black;
-  color: black;
-  font-size: 40px;
+.add button{
+  background-color: #ffc714;
   font-weight: bold;
+  position: fixed;
+  right : 168px;
 }
-button.add:hover{
-  background-color: #e6e600;
-}
+

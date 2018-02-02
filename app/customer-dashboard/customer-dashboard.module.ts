@@ -8,6 +8,7 @@ import {CommonModule} from "@angular/common";
 import {CustomerDetailsComponent} from "./components/customer-details/customer-details.component";
 import {RouterModule, Routes} from "@angular/router";
 import {CustomerViewerComponent} from "./containers/customer-viewer/customer-viewer.component";
+import {CustomerEditComponent} from "./components/customer-edit/customer-edit.component";
 
 const routes : Routes = [
   {
@@ -23,7 +24,8 @@ const routes : Routes = [
   declarations:[
     CustomerDashboardComponent,
     CustomerDetailsComponent,
-    CustomerViewerComponent
+    CustomerViewerComponent,
+    CustomerEditComponent
   ],
   imports: [
     CommonModule,

@@ -1,1 +1,8 @@
-<div>Bonjour!</div>
+<div class="try">
+  <div><button (click)="goBack()"><-</button></div>
+  <div class="title">Customer</div>
+  <customer-edit
+    [customer]="customer"
+    (edit)="onEditCustomer($event)">
+  </customer-edit>
+</div>

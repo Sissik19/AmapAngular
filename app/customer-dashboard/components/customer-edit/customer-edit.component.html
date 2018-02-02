@@ -1,0 +1,72 @@
+<div class="tableEdit">
+  <table>
+    <tbody>
+    <tr>
+      <th class="key">Name :</th>
+      <td *ngIf="editName" class="value">
+        <input
+        type="text"
+        [value]="customer.name"
+        (input)="onEdit(name.value, 'name')"
+        #name>
+      </td>
+      <td *ngIf="!editName" class="value">
+        <span>{{customer.name}}</span>
+      </td>
+      <td class="editButton">
+      <button (click)="toggleEdit('name')">{{editName? 'Done' : 'Edit'}}</button></td>
+    </tr>
+
+    <tr>
+      <th class="key">First Name :</th>
+      <td *ngIf="editFirstName" class="value">
+      <input
+        type="text"
+        [value]="customer.firstName"
+        (input)="onEdit(firstName.value, 'firstName')"
+        #firstName>
+      </td>
+      <td *ngIf="!editFirstName" class="value">
+        <span>{{customer.firstName}}</span>
+      </td>
+      <td class="editButton">
+        <button (click)="toggleEdit('firstName')">{{editFirstName? 'Done' : 'Edit'}}</button>
+      </td>
+    </tr>
+
+    <tr>
+      <th class="key">Mail :</th>
+      <td *ngIf="editMail" class="value">
+        <input
+          type="text"
+          [value]="customer.mail"
+          (input)="onEdit(mail.value, 'mail')"
+          #mail>
+      </td>
+      <td *ngIf="!editMail" class="value">
+        <span>{{customer.mail}}</span>
+      </td>
+      <td class="editButton">
+        <button (click)="toggleEdit('mail')">{{editMail? 'Done' : 'Edit'}}</button>
+      </td>
+    </tr>
+    <tr>
+      <th>Tel :</th>
+      <td *ngIf="editTel" class="value">
+          <input
+            type="text"
+            [value]="customer.tel"
+            (input)="onEdit(tel.value)"
+            #tel>
+      </td>
+      <td *ngIf="!editTel" class="value">
+        <span>{{customer.tel}}</span>
+      </td>
+      <td class="editButton">
+        <button (click)="toggleEdit('tel')">{{editTel? 'Done' : 'Edit'}}</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  </div>
+

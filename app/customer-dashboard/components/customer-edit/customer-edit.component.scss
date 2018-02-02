@@ -1,0 +1,32 @@
+table{
+  border: solid 2px black;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+th,td{
+  min-width: 100px;
+  border-top : solid 1px black;
+  padding-top : 5px;
+  padding-bottom:5px;
+}
+
+th{
+  text-align: left;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+td{
+
+}
+
+td.editButton{
+  text-align: center;
+}
+
+td.value{
+  min-width: 230px;
+}
