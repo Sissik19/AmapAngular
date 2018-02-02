@@ -10,7 +10,7 @@ interface Nav{
 @Component({
   selector: 'app-root',
   styleUrls: ['app.component.scss'],
-  template: `    
+  template: `
     <div class="container">
       <div class="app">
         <div class="header">
