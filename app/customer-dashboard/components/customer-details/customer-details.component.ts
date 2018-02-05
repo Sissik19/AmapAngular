@@ -1,6 +1,7 @@
 import {Component, Input, Output, EventEmitter, OnInit, OnChanges} from "@angular/core";
 
 import {Customer} from "../../models/customer.interface";
+import {FormControl, FormGroup} from "@angular/forms";
 
 
 @Component({
@@ -10,8 +11,15 @@ import {Customer} from "../../models/customer.interface";
 })
 
 export class CustomerDetailsComponent implements OnChanges{
+
+  searchForm = new FormGroup({
+    name : new FormControl(),
+    firstName : new FormControl(),
+    accountCheck : new FormControl()
+  });
+
   filterCustomer: Customer[];
-  check: boolean= true;
+  check: boolean= false;
 
   @Input()
   customers : Customer[];
@@ -37,32 +45,27 @@ export class CustomerDetailsComponent implements OnChanges{
     this.remove.emit(customer);
   }
 
-  filterName(value : string){
-    if(value==""){
-      this.filterCustomer = this.customers;
+  filter(){
+    if(this.searchForm.value.name != null){
+      this.filterCustomer = this.customers.filter(customer =>{
+        if(customer.name.toLowerCase().indexOf(this.searchForm.value.name.toLowerCase())!=-1) {
+          return customer;
+        }
+      });
     }else{
-      this.filterCustomer = this.filterCustomer.filter(customer => customer.name.toLowerCase().indexOf(value.toLowerCase())!=-1)
-    }
-  }
-
-  filterFirstName(value : string){
-    if(value==""){
-      this.filterCustomer = this.customers;
-    }else{
-      this.filterCustomer = this.filterCustomer.filter(customer => customer.firstName.toLowerCase().indexOf(value.toLowerCase())!=-1)
-    }
-  }
-
-  filterByAccount(){
-    if(this.check==true){
-      this.filterCustomer = this.filterCustomer.filter(customer => customer.bankAccount<=0)
-      this.check = false;
-    }else{
-      this.check = true;
       this.filterCustomer = this.customers;
     }
-
-
+    if(this.searchForm.value.firstName != null) {
+      this.filterCustomer = this.filterCustomer.filter(customer => {
+        if (customer.firstName.toLowerCase().indexOf(this.searchForm.value.firstName.toLowerCase()) != -1) {
+          return customer;
+        }
+      });
+    }
+    if(this.searchForm.value.accountCheck != null){
+      if(this.searchForm.value.accountCheck==true){
+        this.filterCustomer = this.filterCustomer.filter(customer => customer.bankAccount<=0)
+      }
+    }
   }
-
 }

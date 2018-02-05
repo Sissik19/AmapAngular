@@ -1,5 +1,15 @@
-<table class="table-hover">
+<div class="form-find col-lg-12">
+  <h3 class="h3-find"><span class="glyphicon glyphicon-search"></span>Find someone :</h3>
+  <form [formGroup]="searchForm" novalidate>
+      <label>Name : <input type="text" formControlName="name" class="input-filter" (input)="filter()"></label>
+      <label>First name : <input type="text" formControlName="firstName" class="input-filter" (input)="filter()"></label>
+      <label>See negative accounts : <input type="checkbox" formControlName="accountCheck" (change)="filter()"></label>
+  </form>
+</div>
+
+<table class="table-hover col-lg-12">
   <tbody>
+
     <tr>
       <th>Name</th>
       <th>First Name</th>
@@ -9,20 +19,7 @@
       <th class="view"></th>
       <th class="remove"></th>
     </tr>
-      <tr>
-        <td>
-          <label style="float:left; width: 20%" class="glyphicon glyphicon-search"></label>
-          <input type="text" name="name" class="input-filter" (input)="filterName($event.target.value)">
-        </td>
-        <td>
-          <span class="glyphicon glyphicon-search"></span>
-          <input type="text" name="firstName" class="input-filter" (input)="filterFirstName($event.target.value)">
-          <p></p>
-        </td>
-        <td></td>
-        <td></td>
-        <td><input type="checkbox" (change)="filterByAccount(check)"></td>
-      </tr>
+
     <tr *ngFor="let oneCustomer of filterCustomer">
       <td>{{oneCustomer.name}}</td>
       <td>{{oneCustomer.firstName}}</td>

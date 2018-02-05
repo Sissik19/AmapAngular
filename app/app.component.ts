@@ -12,8 +12,8 @@ interface Nav{
   styleUrls: ['app.component.scss'],
   template: `
     <div class="container">
-      <div class="app">
-        <div class="header">
+      <div class="app row">
+        <div class="header col-lg-12">
           <h1>On fait des tests</h1>
           <nav class="nav" data-spy="affix" data-offset-top="197">
             <a
@@ -25,7 +25,9 @@ interface Nav{
             </a>
           </nav>
         </div>
-        <router-outlet></router-outlet>
+        <div class="body col-lg-12">
+          <router-outlet></router-outlet>
+        </div>
       </div>
     </div>
   `

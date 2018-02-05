@@ -1,5 +1,5 @@
 import {NgModule} from "@angular/core";
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms'
 //Service
 import {CustomerDashboardService} from "./customer-dashboard.service";
 import {CustomerDashboardComponent} from "./containers/customer-dashboard/customer-dashboard.component";
@@ -30,6 +30,8 @@ const routes : Routes = [
   imports: [
     CommonModule,
     HttpModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(routes)
   ],
   providers: [
