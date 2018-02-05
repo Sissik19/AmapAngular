@@ -56,7 +56,7 @@
           <input
             type="text"
             [value]="customer.tel"
-            (input)="onEdit(tel.value)"
+            (input)="onEdit(tel.value, 'tel')"
             #tel>
       </td>
       <td *ngIf="!editTel" class="value">

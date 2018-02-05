@@ -15,7 +15,7 @@ interface Nav{
       <div class="app">
         <div class="header">
           <h1>On fait des tests</h1>
-          <nav class="nav">
+          <nav class="nav" data-spy="affix" data-offset-top="197">
             <a
               *ngFor="let item of nav"
               [routerLink]="item.link"

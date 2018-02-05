@@ -25,6 +25,7 @@ export class CustomerEditComponent implements OnChanges{
   constructor(){}
 
   ngOnChanges(changes){
+    console.dir(this.customer);
     if(changes.customer){
       this.customer = Object.assign({}, changes.customer.currentValue);
     }
