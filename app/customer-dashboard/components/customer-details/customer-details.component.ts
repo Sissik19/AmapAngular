@@ -68,4 +68,10 @@ export class CustomerDetailsComponent implements OnChanges{
       }
     }
   }
+
+  tri(){
+    this.filterCustomer.sort(function(a,b){
+      return a.firstName.localeCompare(b.firstName);
+    });
+  }
 }
