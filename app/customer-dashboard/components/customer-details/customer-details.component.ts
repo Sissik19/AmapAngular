@@ -12,6 +12,9 @@ import {FormControl, FormGroup} from "@angular/forms";
 
 export class CustomerDetailsComponent implements OnChanges{
 
+  sortName: number= 0;
+  sortFirstName : number = 0;
+
   searchForm = new FormGroup({
     name : new FormControl(),
     firstName : new FormControl(),
@@ -19,7 +22,7 @@ export class CustomerDetailsComponent implements OnChanges{
   });
 
   filterCustomer: Customer[];
-  check: boolean= false;
+
 
   @Input()
   customers : Customer[];
@@ -69,9 +72,35 @@ export class CustomerDetailsComponent implements OnChanges{
     }
   }
 
-  tri(){
-    this.filterCustomer.sort(function(a,b){
-      return a.firstName.localeCompare(b.firstName);
-    });
+  triFirstName(){
+    if(this.sortFirstName==0 || this.sortFirstName==2){
+      this.filterCustomer.sort(function(a,b){
+        return a.firstName.toLowerCase().localeCompare(b.firstName.toLowerCase());
+      });
+      this.sortName=0;
+      this.sortFirstName = 1;
+    }else if(this.sortFirstName==1){
+      this.filterCustomer.sort(function (a,b) {
+        return b.firstName.toLowerCase().localeCompare(a.firstName.toLowerCase());
+      });
+      this.sortFirstName = 2;
+      this.sortName = 0;
+    }
+  }
+
+  triName() {
+    if (this.sortName == 0 || this.sortName == 2) {
+      this.filterCustomer.sort(function (a, b) {
+        return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
+      });
+      this.sortFirstName = 0;
+      this.sortName = 1;
+    } else if (this.sortName == 1) {
+      this.filterCustomer.sort(function (a, b) {
+        return b.name.toLowerCase().localeCompare(a.name.toLowerCase());
+      });
+      this.sortName = 2;
+      this.sortFirstName = 0;
+    }
   }
 }

@@ -2,7 +2,7 @@
   <table>
     <tbody>
     <tr>
-      <th class="key">Name :</th>
+      <th class="key"><i class="far fa-user icone"></i>Name :</th>
       <td *ngIf="editName" class="value">
         <input
         type="text"
@@ -14,11 +14,13 @@
         <span>{{customer.name}}</span>
       </td>
       <td class="editButton">
-      <button (click)="toggleEdit('name')">{{editName? 'Done' : 'Edit'}}</button></td>
+      <a (click)="toggleEdit('name')" class="fas fa-border" [ngClass]="{'fa-check' : editName, 'fa-edit' : !editName}"></a>
+      </td>
+
     </tr>
 
     <tr>
-      <th class="key">First Name :</th>
+      <th class="key"><i class="far fa-user icone"></i>First Name :</th>
       <td *ngIf="editFirstName" class="value">
       <input
         type="text"
@@ -30,12 +32,12 @@
         <span>{{customer.firstName}}</span>
       </td>
       <td class="editButton">
-        <button (click)="toggleEdit('firstName')">{{editFirstName? 'Done' : 'Edit'}}</button>
+        <a (click)="toggleEdit('firstName')" class="fas fa-border" [ngClass]="{'fa-check' : editFirstName, 'fa-edit' : !editFirstName}"></a>
       </td>
     </tr>
 
     <tr>
-      <th class="key">Mail :</th>
+      <th class="key"><i class="far fa-envelope icone"></i>Mail :</th>
       <td *ngIf="editMail" class="value">
         <input
           type="text"
@@ -47,11 +49,11 @@
         <span>{{customer.mail}}</span>
       </td>
       <td class="editButton">
-        <button (click)="toggleEdit('mail')">{{editMail? 'Done' : 'Edit'}}</button>
+        <a (click)="toggleEdit('mail')" class="fas fa-border" [ngClass]="{'fa-check' : editMail, 'fa-edit' : !editMail}"></a>
       </td>
     </tr>
     <tr>
-      <th>Tel :</th>
+      <th><i class="fas fa-phone icone"></i>Tel :</th>
       <td *ngIf="editTel" class="value">
           <input
             type="text"
@@ -63,7 +65,7 @@
         <span>{{customer.tel}}</span>
       </td>
       <td class="editButton">
-        <button (click)="toggleEdit('tel')">{{editTel? 'Done' : 'Edit'}}</button>
+        <a (click)="toggleEdit('tel')" class="fas fa-border" [ngClass]="{'fa-check' : editTel, 'fa-edit' : !editTel}"></a>
       </td>
     </tr>
     </tbody>

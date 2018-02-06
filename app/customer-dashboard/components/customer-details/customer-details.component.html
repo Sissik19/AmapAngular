@@ -11,11 +11,23 @@
   <tbody>
 
     <tr>
-      <th>Name</th>
-      <th>First Name</th>
-      <th>Mail adress</th>
-      <th>Tel</th>
-      <th>Bank account</th>
+      <th><i class="far fa-user icone"></i>Name
+        <a (click)="triName()">
+          <span
+            class="fas" [ngClass]="{'fa-sort-up': sortName==1, 'fa-sort-down': sortName==2, 'fa-sort': sortName==0}">
+          </span>
+        </a>
+      </th>
+      <th><i class="far fa-user icone"></i>First Name
+        <a (click)="triFirstName()">
+          <i
+            class="fas" [ngClass]="{'fa-sort-up': sortFirstName==1, 'fa-sort-down': sortFirstName==2, 'fa-sort': sortFirstName==0}">
+          </i>
+        </a>
+      </th>
+      <th><i class="far fa-envelope icone"></i>Mail address </th>
+      <th><i class="fas fa-phone icone"></i>Tel</th>
+      <th><i class="fas fa-euro-sign icone"></i>Bank account</th>
       <th class="view"></th>
       <th class="remove"></th>
     </tr>
@@ -26,11 +38,10 @@
       <td>{{oneCustomer.mail}}</td>
       <td>{{oneCustomer.tel}}</td>
       <td  [ngClass]="{'negative-account': oneCustomer.bankAccount<0, 'positive-account': oneCustomer.bankAccount>=0}"> {{oneCustomer.bankAccount}} </td>
-      <td><button (click)="onView(oneCustomer)">View</button></td>
-      <td><button (click)="onRemove(oneCustomer)" >Remove</button></td>
+      <td><a (click)="onView(oneCustomer)"><label class="fas fa-eye fa-2x"></label></a></td>
+      <td><a (click)="onRemove(oneCustomer)"><label class="far fa-trash-alt fa-2x"></label></a></td>
     </tr>
   </tbody>
 </table>
 
-<label>Tri : <input type="button" (click)="tri()"></label>
 
